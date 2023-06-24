@@ -21,19 +21,10 @@ const SpeechToText = ({ questions, questionNumber }) => {
   const [disableStopBtn, setDisableStopBtn] = useState(true);
 
   const studentQuestionAnswer = questions;
-  console.log(studentQuestionAnswer);
   const [questionNumberTracker, setQuestionNumberTracker] = useState(1);
 
-  // const questions = useSelector((store) => store.reducer.question);
-  // const questionNumber = useSelector((store) => store.reducer.questionNumber);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(showTimer1);
-  console.log(showTimer2, startBtn);
-  console.log(questions);
-  // console.log(Object.keys(studentQuestionAnswer).length, "LENGTh");
-  //
-
   let alertTimerId;
   let answerTimerId;
 
@@ -121,7 +112,7 @@ const SpeechToText = ({ questions, questionNumber }) => {
 
   function handleReset() {
     resetTranscript();
-    console.log(intervieweeAnswer, "ANSWER");
+    // console.log(intervieweeAnswer, "ANSWER");
   }
 
   function updateAnserFromStudent() {

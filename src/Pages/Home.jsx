@@ -30,7 +30,7 @@ function Home() {
   const dispatch = useDispatch();
 
   const verified = useVerify();
-  console.log(verified, "verified");
+  // console.log(verified, "verified");
 
   const handleRoleChange = (event) => {
     setRole(event.target.value);
@@ -48,11 +48,11 @@ function Home() {
         role,
         experience,
       };
-      console.log(obj);
+      // console.log(obj);
       axios
         .post(`${url}/question/query`, obj)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           if (res.data.success == true) {
             const questions = {};
             res.data.data.forEach((question, i) => {

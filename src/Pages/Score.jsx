@@ -32,7 +32,7 @@ const Score = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   const user = useSelector((store) => store.reducer.user);
-  console.log("USER", user);
+  // console.log("USER", user);
 
   useEffect(() => {
     fetchUserFeedbackData();
@@ -42,7 +42,7 @@ const Score = () => {
     axios
       .get(`${url}/history/${user._id || localStorage.getItem("id")}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setFeedbacks(res.data);
       })
       .catch((err) => {

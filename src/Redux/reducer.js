@@ -31,7 +31,7 @@ export const reducer = (state = initialState, action) => {
       return { ...state, feedback: action.payload };
 
     case UPDATE_ANSWER:
-      console.log("INREDUX", action.payload);
+      // console.log("INREDUX", action.payload);
       return {
         ...state,
         question: action.payload,

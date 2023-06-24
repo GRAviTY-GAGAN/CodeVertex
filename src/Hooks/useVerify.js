@@ -12,7 +12,7 @@ const useVerify = () => {
       : process.env.REACT_APP_PROD_URL;
 
   useEffect(() => {
-    console.log(`${url}/user/verify`);
+    // console.log(`${url}/user/verify`);
     verifyToken();
   }, []);
 
@@ -25,7 +25,7 @@ const useVerify = () => {
         },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data.msg == "Success") {
           setverified(true);
           setUser(res.data.user);

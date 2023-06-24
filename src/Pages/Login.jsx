@@ -39,7 +39,7 @@ const Login = () => {
     axios
       .post(`${url}/user/login`, payload)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("id", res.data.user._id);
         toast({
           title: `${
