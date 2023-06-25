@@ -65,10 +65,10 @@ const Navbar = ({ show, setShow }) => {
                 <span className="inline-block  text-2xl">&#x1F4AC;</span>
               </Link>
               <div
-                className="text-white hover:text-gray-300 font-semibold transition duration-300 ease-in-out"
+                className="text-white cursor-pointer hover:text-gray-300 font-semibold transition duration-300 ease-in-out"
                 onClick={handleLogout}
               >
-                <span className="flex justify-center items-center gap-2 mr-4">
+                <span className="flex justify-center items-center gap-2 mr-4 cursor-pointer">
                   {auth ? "Logout" : ""}
                   {auth ? (
                     <span>
