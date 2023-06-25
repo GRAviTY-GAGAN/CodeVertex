@@ -78,3 +78,13 @@ form~a {
     text-align: right;
     width: 90%;
 }
+
+@media screen and (max-width:500px) {
+    #signup-card {
+        width: 340px;
+    }
+
+    #signup-card>div>form>input {
+        width: 100%;
+    }
+}

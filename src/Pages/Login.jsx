@@ -15,6 +15,7 @@ import {
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const url =
     process.env.NODE_ENV == "development"
@@ -35,6 +36,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setLoading(true);
     const payload = { email, password };
     axios
       .post(`${url}/user/login`, payload)
@@ -70,6 +72,9 @@ const Login = () => {
           isClosable: true,
           position: "top",
         });
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -78,7 +83,7 @@ const Login = () => {
       <div id="login-card">
         {/* <h2>Please Login</h2> */}
         {/* <img src="" alt="" srcset="" /> */}
-        <div>
+        <div className="w-[280px] md:w-auto">
           <form onSubmit={handleLogin}>
             <label>Username</label>
             <br />
@@ -102,7 +107,7 @@ const Login = () => {
               className="bg-gradient-to-r from-violet-500 to-fuchsia-500"
               type="submit"
             >
-              Login
+              {loading ? <Spinner /> : "Login"}
             </button>
           </form>
           <Link to="/resetPass">

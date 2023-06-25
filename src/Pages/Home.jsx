@@ -82,18 +82,20 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text animate-marquee">
+    <div className="flex flex-col items-center  min-h-screen bg-gray-100">
+      <h1 className="text-2xl mt-10 md:text-4xl md:mt-20 font-bold mb-8 bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text animate-marquee">
         Welcome to CodeVertax.....
       </h1>
-      <div className="max-w-3xl mx-auto flex h-96 mb-16">
-        <img
-          src="https://i.makeagif.com/media/7-04-2018/qDFTM-.gif"
-          alt=""
-          className="w-1/2"
-        />
+      <div className="w-[340px] flex-col items-center flex h-96 mb-16 md:w-[400px] lg:w-[400px]">
+        <div className="w-[100%]">
+          <img
+            src="https://i.makeagif.com/media/7-04-2018/qDFTM-.gif"
+            alt=""
+            className="w-[100%]"
+          />
+        </div>
         <form
-          className="bg-white rounded-lg shadow-md p-10 pt-20 w-1/2"
+          className="bg-white w-[100%] rounded-lg shadow-md p-10 md:w-[100%] "
           onSubmit={handleSubmit}
         >
           <div className="mb-4">

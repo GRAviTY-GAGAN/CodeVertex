@@ -13,7 +13,7 @@ function AllRoutes() {
   return (
     <Routes>
       <Route
-        path="/home"
+        path="/Home"
         element={
           <PrivateRoute>
             <Home />
@@ -31,7 +31,7 @@ function AllRoutes() {
         }
       />
       <Route
-        path="/score"
+        path="/Scores"
         element={
           <PrivateRoute>
             <Score />

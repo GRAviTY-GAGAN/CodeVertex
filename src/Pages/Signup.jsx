@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/signup.css";
 import logo from "../images/code-vortex-logo.png";
-import { Text, useToast } from "@chakra-ui/react";
+import { Spinner, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import {useNavigate} fro/m
@@ -15,11 +15,15 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setname] = useState("");
+  const [loading, setLoading] = useState(false);
   const [confirmPass, setConfirmPass] = useState("");
+
   const navigate = useNavigate();
   const toast = useToast();
+
   const handleRegister = (e) => {
     e.preventDefault();
+    setLoading(true);
     if (password === confirmPass) {
       const payload = {
         email,
@@ -58,6 +62,9 @@ const Signup = () => {
             isClosable: true,
             position: "top",
           });
+        })
+        .finally(() => {
+          setLoading(false);
         });
     } else {
       toast({
@@ -68,13 +75,16 @@ const Signup = () => {
         position: "top",
       });
     }
+    setLoading(false);
   };
 
   return (
     <div id="container">
       <div id="signup-card">
         {/* <img src={logo} width={"100px"} alt="eroyu" /> */}
-        <Text fontSize="20px">Register</Text>
+        <Text fontSize="20px" className=" font-medium mt-4">
+          Register
+        </Text>
         <div>
           <form onSubmit={handleRegister}>
             <label>Name</label>
@@ -124,7 +134,7 @@ const Signup = () => {
               className="bg-gradient-to-r from-violet-500 to-fuchsia-500"
               type="submit"
             >
-              Sign up
+              {loading ? <Spinner /> : "Sign up"}
             </button>
           </form>
         </div>

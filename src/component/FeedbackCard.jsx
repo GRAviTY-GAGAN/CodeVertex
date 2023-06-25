@@ -13,11 +13,11 @@ function FeedbackCard({ feedback }) {
         <p className="text-">{date}</p>
       </div> */}
       <div className="card-header">
-        <h3 className="score m-0  flex justify-between">
-          <p>
+        <h3 className="score m-0  flex justify-between flex-wrap">
+          <p className="w-[150px] font-medium">
             {feedback.body?.split("\n")[2]?.replace(",", "")?.toUpperCase()}/10
           </p>
-          <p className=" text-gray-300 font-medium text-[15px]">{date}</p>
+          <p className=" text-gray-400 font-medium text-[15px]">{date}</p>
         </h3>
         {/* <p className="author">{user.name}</p> */}
       </div>

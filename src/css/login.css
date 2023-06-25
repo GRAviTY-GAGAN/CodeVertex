@@ -67,3 +67,14 @@ form~a {
     text-align: right;
     width: 90%;
 }
+
+@media screen and (max-width:500px) {
+    #login-card {
+        width: 340px;
+    }
+
+    #login-card>div {
+        width: 280px;
+    }
+
+}

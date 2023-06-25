@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# CodeVortex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Code Vortex is an innovative self-interview prep platform harnessing the power of AI and natural language processing. It leverages OpenAI's advanced capabilities and prompt engineering techniques to replicate real interview scenarios. With personalized feedback and a comprehensive set of resources, Code Vortex empowers users to enhance their interview skills and excel in their job search.
 
-## Available Scripts
+## Deployed Links
 
-In the project directory, you can run:
+https://code-vertex.netlify.app **(Netlify)** \
+https://cute-puce-harp-seal.cyclic.app **(Cyclic)**
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- AI-Powered Interview Simulation
+- Personalized Feedback
+- Prompt Engineering Techniques
+- Performance Tracking and Analytics
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+**Client:** React, Redux, TailwindCSS, Thunk, Chakra UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Server:** Node, Express, MongoDB
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![CodeVertexSignup](https://github.com/CodingDemon1/CodeVortex/assets/68629598/e0217d76-477e-4213-aa9a-292548fbb996)
+![CodeVertexLogin](https://github.com/CodingDemon1/CodeVortex/assets/68629598/2f569e53-698a-4007-a7d7-26129880cacc)
+![CodeVertexForgotPass](https://github.com/CodingDemon1/CodeVortex/assets/68629598/28e9e2c1-f8f6-4fa9-89fb-5b4758a14717)
+![CodeVortexHome](https://github.com/CodingDemon1/CodeVortex/assets/68629598/654458dc-2521-42f1-8386-28418a55536a)
+![CodeVortexInterview](https://github.com/CodingDemon1/CodeVortex/assets/68629598/789e8dfb-9192-4192-8493-5cd1420f7523)
+![CodeVortexFeedbackGenerationPage](https://github.com/CodingDemon1/CodeVortex/assets/68629598/d107e72a-6025-45d3-963f-48a4194bc8c2)
+![CodeVortexFeedbackpage](https://github.com/CodingDemon1/CodeVortex/assets/68629598/cefe03a9-adb9-41ba-aede-0278479f96a3)
+![CodeVortexScoresPage](https://github.com/CodingDemon1/CodeVortex/assets/68629598/e5be4b54-243d-470b-8cc1-c3875cc93ac3)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [@abhimanyulp](https://github.com/abhimanyulp)
+- [@GRAviTY-GAGAN](https://github.com/GRAviTY-GAGAN)
+- [@vipullsingh](https://github.com/vipullsingh)
+- [@Sonu-Shettiyar](https://github.com/Sonu-Shettiyar)
+- [@CodingDemon1](https://github.com/CodingDemon1)
+- [@senapathisowjanya](https://github.com/senapathisowjanya)
 
-### `npm run eject`
+## API Reference
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### User Registration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```http
+  POST /user/register
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### User Login
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```http
+  POST /user/login
+```
 
-## Learn More
+#### User Logout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```http
+  GET /user/logout
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Verify User
 
-### Code Splitting
+```http
+  GET /user/verify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Header  | Type     | Description                     |
+| :------ | :------- | :------------------------------ |
+| `token` | `string` | **Required**. Token of the user |
 
-### Analyzing the Bundle Size
+#### Get Questions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```http
+  POST /question/query
+```
 
-### Making a Progressive Web App
+| Body               | Type     | Description   |
+| :----------------- | :------- | :------------ |
+| `role, experience` | `object` | **Required**. |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Get Feedback of Questions
 
-### Advanced Configuration
+```http
+  POST /question/rating
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Body                                             | Type     | Description   |
+| :----------------------------------------------- | :------- | :------------ |
+| `userid, question1, question2, answer1, answer3` | `object` | **Required**. |
 
-### Deployment
+#### Get History of User
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```http
+  GET /history/${id}
+```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of user to fetch |

@@ -14,7 +14,7 @@ const SpeechToText = ({ questions, questionNumber }) => {
   const [intervieweeAnswer, setIntervieweeAnswer] = useState("");
   const startBtn = document.querySelector(".startBtn");
   const answerContainer = document.querySelector(".answerContainer");
-  const [timer1, setTimer1] = useState(5);
+  const [timer1, setTimer1] = useState(10);
   const [answerTimer, setAnswerTimer] = useState(30);
   const showTimer1 = useRef(true);
   const showTimer2 = useRef(false);
@@ -34,11 +34,11 @@ const SpeechToText = ({ questions, questionNumber }) => {
         setTimer1((prev) => {
           if (prev <= 0) {
             startListening();
-            setTimer1(5);
+            setTimer1(10);
             showTimer1.current = false;
             showTimer2.current = true;
             clearInterval(alertTimerId);
-            return 5;
+            return 10;
           }
           return prev - 1;
         });
@@ -132,7 +132,7 @@ const SpeechToText = ({ questions, questionNumber }) => {
         )}
       </div>
       <div className="flex gap-2 flex-col lg:flex-row">
-        <div className="text-left p-4 lg:min-w-[50%]">
+        <div className="text-left md:p-4 lg:p-4  lg:min-w-[50%]">
           <Question
             question={questions[`question${questionNumberTracker}`].question}
           />

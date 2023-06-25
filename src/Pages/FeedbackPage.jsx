@@ -38,7 +38,7 @@ const FeedbackPage = () => {
         }
       )
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res.data.success == true) {
           dispatch({ type: INTERVIEW_FEEDBACK, payload: res.data.data });
         }

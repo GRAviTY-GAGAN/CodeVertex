@@ -46,7 +46,9 @@ const PerfomanceFeedback = () => {
       <Center mt={40}>
         <VStack>
           <Spinner size="xl" />
-          <Heading>Please wait while we generate feedback for you...</Heading>
+          <div className=" font-medium md:text-2xl lg:text-3xl lg:font-bold">
+            Please wait while we generate feedback for you...
+          </div>
           <Divider p={"10px"} />
         </VStack>
       </Center>
@@ -54,12 +56,14 @@ const PerfomanceFeedback = () => {
   }
   return (
     <Box>
-      <Center>
-        <Flex alignItems={"center"} fontSize={"30px"} mt={10} fontWeight={500}>
+      <div className=" flex gap-2 m-6 font-medium">
+        <div className="text-3xl">
           <AiOutlineFileDone />
+        </div>
+        <div className="md:text-2xl lg:text-2xl">
           {quotes[Math.floor((Math.random() * 1000) / 100)]}
-        </Flex>
-      </Center>
+        </div>
+      </div>
 
       <Text fontSize={"25px"} fontWeight={700} textAlign={"center"} m={"4%"}>
         YOUR {feedback?.split("\n")[2]?.replace(",", "")?.toUpperCase()}/10
@@ -74,7 +78,7 @@ const PerfomanceFeedback = () => {
         border={"5px solid #cf49f0b5"}
         borderBlockStartColor={"#9958F5"}
         borderLeftColor={"#a978edc0"}
-        w={"70%"}
+        w={"90%"}
         margin={"auto"}
       >
         <Box bg={"#cd8fe3cc"}>
@@ -89,7 +93,7 @@ const PerfomanceFeedback = () => {
             -These tips can expedite your hiring success.{" "}
           </Text>
         </Box>
-        <Box p={"10px"} width={"80%"} fontSize={"20px"} marginLeft={"20px"}>
+        <Box p={"10px"} width={"100%"} fontSize={"16px"}>
           <Text>
             <span style={{ fontWeight: 500 }}> Advice :</span>
             {feedback
