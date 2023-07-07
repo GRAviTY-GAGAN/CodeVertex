@@ -4,7 +4,7 @@ Code Vortex is an innovative self-interview prep platform harnessing the power o
 
 ## Deployed Links
 
-https://code-vertex.netlify.app **(Netlify)** \
+[https://code-vertex.netlify.app](https://interview-simulator-open-ai.netlify.app/) **(Netlify)** \
 https://cute-puce-harp-seal.cyclic.app **(Cyclic)**
 
 ## Features
