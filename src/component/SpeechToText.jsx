@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { createSpeechlySpeechRecognition } from "@speechly/speech-recognition-polyfill";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -19,6 +20,10 @@ const SpeechToText = ({ questions, questionNumber }) => {
   const showTimer1 = useRef(true);
   const showTimer2 = useRef(false);
   const [disableStopBtn, setDisableStopBtn] = useState(true);
+
+  // const appId = "df17e274-ce41-4d0d-bad2-12233e00fe1b";
+  // const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
+  // SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
   const studentQuestionAnswer = questions;
   const [questionNumberTracker, setQuestionNumberTracker] = useState(1);

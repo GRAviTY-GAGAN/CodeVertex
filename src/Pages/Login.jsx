@@ -64,9 +64,13 @@ const Login = () => {
         navigate("/home");
       })
       .catch((err) => {
-        console.log(err.message);
+        console.log(err);
         toast({
-          title: `${err.message ? err.message : "Something went wrong!"}`,
+          title: `${
+            err.response.data.msg
+              ? err.response.data.msg
+              : "Something went wrong!"
+          }`,
           status: "error",
           duration: 9000,
           isClosable: true,
