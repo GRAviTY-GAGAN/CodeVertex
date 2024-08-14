@@ -29,7 +29,7 @@ function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const verified = useVerify();
+  // const verified = useVerify();
   // console.log(verified, "verified");
 
   const handleRoleChange = (event) => {
@@ -64,7 +64,20 @@ function Home() {
           }
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err.response.data);
+          if (JSON.stringify(err.response.data).includes("model_not_found")) {
+            toast({
+              title: "Model Expired!",
+              status: "warning",
+              description: "Redirecting to documentation.",
+              position: "top",
+            });
+            setTimeout(() => {
+              window.open("https://github.com/GRAviTY-GAGAN/CodeVertex");
+              // window.location.href =
+              //   "https://github.com/GRAviTY-GAGAN/CodeVertex";
+            }, 5000);
+          }
         })
         .finally(() => {
           setLoading(false);
