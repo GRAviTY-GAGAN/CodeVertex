@@ -73,9 +73,9 @@ function Home() {
               position: "top",
             });
             setTimeout(() => {
-              window.open("https://github.com/GRAviTY-GAGAN/CodeVertex");
-              // window.location.href =
-              //   "https://github.com/GRAviTY-GAGAN/CodeVertex";
+              // window.open("https://github.com/GRAviTY-GAGAN/CodeVertex");
+              window.location.href =
+                "https://github.com/GRAviTY-GAGAN/CodeVertex";
             }, 5000);
           }
         })
